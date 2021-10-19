@@ -1,4 +1,6 @@
 
+import java.util.Scanner;
+
 public class MathPlay {
     
     public static void main(String[] args) {
@@ -29,8 +31,16 @@ public class MathPlay {
 
         float OTPaySquared = (float) Math.pow(OTPay, 2);
 
-        float principal = 53000, intRate = 7.625f;
+        float principal, intRate;
         int years = 15;        
+
+        Scanner myScanner = new Scanner(System.in);
+
+        System.out.print("How much do you want to borrow? ");
+        principal = myScanner.nextFloat();
+
+        System.out.print("At wat ratew? ");
+        intRate = myScanner.nextFloat();
 
         float pmt = (float)((principal * intRate / 1200) / ( 1 - Math.pow(1 + intRate / 1200, -years * 12))); 
         System.out.printf("Your $%.2f loan payment is $%.2f/month for %d years", principal, pmt, years);
