@@ -28,7 +28,7 @@ public class MainApp {
         // display(family);
 
 
-        Person[] family;
+        Person[] family = null;    // must set to null
         for(int i = 0; i < 2; i++) {
             if (i == 0) {
                 family = buildTheWyatts();
@@ -36,6 +36,7 @@ public class MainApp {
             else if (i == 1) {
                 family = buildtheThibbodeauxes();
             }
+            // because if neither if is true, then family is at least initialized to null
 
             display(family);
         }
