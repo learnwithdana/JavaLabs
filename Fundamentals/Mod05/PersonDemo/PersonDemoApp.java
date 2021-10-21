@@ -42,5 +42,21 @@ public class PersonDemoApp {
         System.out.println(p3);
         System.out.println(p4);
         System.out.println(p5);
+
+
+
+/*
+        String command;
+
+        do {
+           System.out.print("Enter command: ");
+           command = scanner.nextLine();           
+        } while (!command.equals("A") && !command.equal("S"));
+
+*/
+
+
+
+
     }
 }
