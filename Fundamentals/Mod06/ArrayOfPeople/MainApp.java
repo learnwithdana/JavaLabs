@@ -1,4 +1,6 @@
 
+ import java.util.*;
+
 public class MainApp {
 
     public static void main(String[] args) {
@@ -32,6 +34,8 @@ public class MainApp {
         for(int i = 0; i < 2; i++) {
             if (i == 0) {
                 family = buildTheWyatts();
+
+                family = Arrays.stream(family).filter(p => p.getBirthplace().equals("Dallas")).toArray();
             }
             else if (i == 1) {
                 family = buildtheThibbodeauxes();
@@ -40,6 +44,8 @@ public class MainApp {
 
             display(family);
         }
+
+
 
 //------------------------------ OLD (FIRST) DEMO ----------------------------------------------
         // Create an array of Person objects (no people yet!)
