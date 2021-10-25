@@ -1,5 +1,7 @@
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
 
 public class Kennel {
     // about the facility
@@ -57,12 +59,12 @@ public class Kennel {
 
     public boolean checkinPet(Pet pet) {
         guests.add(pet);
-        
+
         return true;
     }
 
-    public ArrayList<Pet> getPets() {
-        return guests;
+    public List<Pet> getPets() {
+        return  Collections.unmodifiableList(guests);
     }
 
 }
