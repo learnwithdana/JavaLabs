@@ -6,34 +6,13 @@ public class Program {
    public static void main(String[] args) {
 
        // Make sure there are command line argumenst for first name, last name and file name
-       if (args.length < 3) {
-           System.out.println("ERROR: Usage is java Program first-name last-name file-name");
+       if (args.length < 2) {
+           System.out.println("ERROR: Usage is java Program file-name skill-1 skill-2 ...");
            return;
        }
 
        // Pull args off command
-       String argsFirstName = args[0];
-       String argsLastName = args[1];
-       String argsFileName = args[2];
-
-       // create data I am writing to a file
-       String[] skills = new String[13];
-       skills[0] = "Angular";
-       skills[1] = "JavaScript";
-       skills[2] = "Bootstrap";
-       skills[3] = "html";
-       skills[4] = "Git";
-       skills[5] = "Google";
-       skills[6] = "CSS";
-       skills[7] = "jQuery";
-       skills[8] = "Node.js";
-       skills[9] = "Teamwork";
-       skills[10] = "Markdown";
-       skills[11] = "Debugging";
-       skills[12] = "TypeScript";
-
-    //    File f = new File("skills.txt");
-    //    boolean fileExists = f.exists();
+       String argsFileName = args[0];
 
        // check to see if file exists to know about adding a first crlf
        boolean fileExists = new File(argsFileName).exists();
@@ -43,14 +22,14 @@ public class Program {
             FileWriter writer = new FileWriter(argsFileName, true); 
 
             // write all the skills
-            for(int i = 0; i < skills.length; i++) {
+            for(int i = 1; i < args.length; i++) {
 
                 // if it is a new file, don't put crlf in front of first item
-                if (i == 0 && !fileExists) {
-                    writer.write(skills[i]);      
+                if (i == 1 && !fileExists) {
+                    writer.write(args[i]);      
                 }
                 else {
-                    writer.write("\n" + skills[i]); 
+                    writer.write("\n" + args[i]); 
                     // NOTE:  we are putting crlf in front of items so we don't have a
                     //        crlf at the end of the last item giving us a blank line
                     //        at the end of the file                  
@@ -58,7 +37,7 @@ public class Program {
             }
             // ALWAYS close your file
             writer.close();
-            System.out.println(argsFileName + " updated by " + argsFirstName + " " + argsLastName);
+            System.out.println(argsFileName + " updated by ");
        }
        catch(Exception e) {
            // display an error if something went wrong

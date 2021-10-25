@@ -1,0 +1,11 @@
+Git
+HTML
+CSS
+BootSTrap
+JavaSCript
+jQuery
+Node.js
+Angular
+Java
+JSP
+MySQL

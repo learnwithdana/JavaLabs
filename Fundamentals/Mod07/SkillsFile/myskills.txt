@@ -1,0 +1,13 @@
+Angular
+JavaScript
+Bootstrap
+html
+Git
+Google
+CSS
+jQuery
+Node.js
+Teamwork
+Markdown
+Debugging
+TypeScript
